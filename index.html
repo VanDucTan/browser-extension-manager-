@@ -16,20 +16,35 @@
   <header class="app-header">
     <div class="logo-container">
       <img src="./assets/images/logo.svg" alt="Extensions Logo" class="logo" />
-      <h1 class="app-title"></h1>
+      <h1 class="app-title">Extensions</h1>
     </div>
 
     <div class="theme-toggle">
-    <button id="themeSwitch" class="theme-button" aria-label="Toggle theme">
-      <img src="./assets/images/icon-sun.svg" alt="Sun Icon" class="icon-sun" />
-      <img src="./assets/images/icon-moon.svg" alt="Moon Icon" class="icon-moon" />
-    </button>
-  </div>
+      <button id="themeSwitch" class="theme-button" aria-label="Toggle theme">
+        <img src="./assets/images/icon-sun.svg" alt="Sun Icon" class="icon-sun" />
+        <img src="./assets/images/icon-moon.svg" alt="Moon Icon" class="icon-moon" />
+      </button>
+    </div>
   </header>
 
-  <!-- Main content will go here -->
+  <!-- Main -->
   <main>
-    <!-- coming soon -->
+    <section class="extension-section">
+      <div class="extension-header">
+        <h2 class="extension-title">Extensions List</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="inactive">Inactive</button>
+        </div>
+      </div>
+
+      <div id="extension-list" class="extension-list">
+        <!-- JS will inject extension cards here -->
+      </div>
+
+      <div id="extension-detail" class="extension-detail-box hidden"></div>
+    </section>
   </main>
 
   <!-- Scripts -->
