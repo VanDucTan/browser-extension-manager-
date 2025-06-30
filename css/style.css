@@ -32,15 +32,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-radius: 25px;
+  border-radius: 10px;
   margin: 40px auto 0;
   max-width: 1080px;
   width: 90%;
-  
+  height: 30px;
   background-color: var(--bg-header);
   color: var(--text-main);
   border: 1px solid var(--border-color);
-
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
@@ -97,40 +96,54 @@ input:checked + .slider::before {
 }
 /* Container button */
 .theme-button {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1f2535;
-  border: 2px solid #2f354b;
-  border-radius: 999px;
+  border-radius: 10px;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.theme-button:hover {
-  border-color: #4f46e5; /* optional hover highlight */
 }
 
 /* Icons */
 .theme-button img {
   width: 20px;
   height: 20px;
-  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  padding: 2px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 /* Show/hide based on theme */
+icon-sun,
+.icon-moon {
+  display: none;
+}
+
+/* Light mode: show moon only */
 body.light-theme .icon-sun {
   display: none;
 }
 body.light-theme .icon-moon {
   display: inline;
 }
+
+/* Dark mode: show sun only */
+body.dark-theme .icon-sun {
+  display: inline;
+}
 body.dark-theme .icon-moon {
   display: none;
 }
+body.light-theme .icon-moon {
+  display: inline;
+  background-color: #f4f4f4;
+}
 body.dark-theme .icon-sun {
   display: inline;
+  background-color: #1f2535;
 }
 
 /* Section layout */
