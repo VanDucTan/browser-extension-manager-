@@ -1,0 +1,229 @@
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  background: #f8fafc;
+  color: #22223b;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem 1.5rem 4rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(34,34,59,0.04);
+}
+.logo {
+  height: 40px;
+}
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-link {
+  text-decoration: none;
+  color: #22223b;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link.active,
+.nav-link:hover {
+  background: #4f8cff;
+  color: #fff;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.theme-toggle:hover {
+  background: #e0e7ef;
+}
+
+.main-content {
+  max-width: 1100px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 2rem;
+}
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #4a4e69;
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #2563eb;
+}
+
+.extensions-list {
+  margin-bottom: 3rem;
+}
+.extensions-list h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #22223b;
+}
+.extensions-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.extension-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(34,34,59,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.extension-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(34,34,59,0.16);
+}
+.extension-logo {
+  height: 56px;
+  margin-bottom: 1.2rem;
+}
+.extension-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.extension-card p {
+  color: #4a4e69;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+.install-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.install-btn:hover {
+  background: #2563eb;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4a4e69;
+  padding: 2rem 0 1rem 0;
+  background: #f8fafc;
+}
+.footer a {
+  color: #4f8cff;
+  text-decoration: none;
+}
+
+/* Dark theme */
+body.dark {
+  background: #181a23;
+  color: #f8fafc;
+}
+body.dark .header,
+body.dark .extension-card {
+  background: #23263a;
+  color: #f8fafc;
+}
+body.dark .footer {
+  background: #181a23;
+  color: #bfc6d1;
+}
+body.dark .nav-link {
+  color: #f8fafc;
+}
+body.dark .nav-link.active,
+body.dark .nav-link:hover {
+  background: #4f8cff;
+  color: #fff;
+}
+body.dark .cta-btn,
+body.dark .install-btn {
+  background: #4f8cff;
+  color: #fff;
+}
+body.dark .cta-btn:hover,
+body.dark .install-btn:hover {
+  background: #2563eb;
+}
+body.dark .theme-toggle:hover {
+  background: #23263a;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .main-content {
+    padding: 0 1rem;
+  }
+  .extensions-grid {
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  .main-content {
+    padding: 0 0.5rem;
+  }
+  .extensions-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .extension-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

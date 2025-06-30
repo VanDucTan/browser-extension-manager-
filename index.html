@@ -7,74 +7,56 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Browser extensions manager UI</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  Extensions List
-
-  All
-  Active
-  Inactive
-
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <header class="header">
+    <img src="assets/images/logo.svg" alt="Logo" class="logo">
+    <nav class="nav">
+      <ul>
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#" class="nav-link">Features</a></li>
+        <li><a href="#" class="nav-link">Pricing</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <img src="assets/images/icon-sun.svg" alt="Light mode" id="theme-icon">
+    </button>
+  </header>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Browser Extensions Manager</h1>
+      <p>Manage and discover your favorite browser extensions easily.</p>
+      <button class="cta-btn">Get Started</button>
+    </section>
+    <section class="extensions-list">
+      <h2>Popular Extensions</h2>
+      <div class="extensions-grid">
+        <div class="extension-card">
+          <img src="assets/images/logo-style-spy.svg" alt="Style Spy" class="extension-logo">
+          <h3>Style Spy</h3>
+          <p>Inspect and tweak CSS styles live on any website.</p>
+          <button class="install-btn">Install</button>
+        </div>
+        <div class="extension-card">
+          <img src="assets/images/logo-tab-master-pro.svg" alt="Tab Master Pro" class="extension-logo">
+          <h3>Tab Master Pro</h3>
+          <p>Organize and manage your browser tabs efficiently.</p>
+          <button class="install-btn">Install</button>
+        </div>
+        <div class="extension-card">
+          <img src="assets/images/logo-json-wizard.svg" alt="JSON Wizard" class="extension-logo">
+          <h3>JSON Wizard</h3>
+          <p>Format, validate, and beautify your JSON data.</p>
+          <button class="install-btn">Install</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</p>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
