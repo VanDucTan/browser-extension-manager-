@@ -40,7 +40,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // 👉 Add more if you like
   ];
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Step 1: Update button UI
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
 
+      // Step 2: Get filter type
+      const type = btn.dataset.filter;
+
+      // Step 3: Filter data
+      let filtered = [];
+      if (type === "all") {
+        filtered = extensions;
+      } else if (type === "active") {
+        filtered = extensions.filter((ext) => ext.isActive);
+      } else if (type === "inactive") {
+        filtered = extensions.filter((ext) => !ext.isActive);
+      }
+
+      // Step 4: Render
+      renderExtensions(filtered);
+    });
+  });
   // ===== Render Extension Cards =====
   function renderExtensions(data) {
     extensionList.innerHTML = ""; // clear old
