@@ -1,62 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser Extensions Manager</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Browser extensions manager UI</title>
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/favicon-32x32.png" type="image/png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
-<body>
-  <header class="header">
-    <img src="assets/images/logo.svg" alt="Logo" class="logo">
-    <nav class="nav">
-      <ul>
-        <li><a href="#" class="nav-link active">Home</a></li>
-        <li><a href="#" class="nav-link">Features</a></li>
-        <li><a href="#" class="nav-link">Pricing</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-      <img src="assets/images/icon-sun.svg" alt="Light mode" id="theme-icon">
+<body class="light-theme">
+  <!-- Header -->
+  <header class="app-header">
+    <div class="logo-container">
+      <img src="./assets/images/logo.svg" alt="Extensions Logo" class="logo" />
+      <h1 class="app-title"></h1>
+    </div>
+
+    <div class="theme-toggle">
+    <button id="themeSwitch" class="theme-button" aria-label="Toggle theme">
+      <img src="./assets/images/icon-sun.svg" alt="Sun Icon" class="icon-sun" />
+      <img src="./assets/images/icon-moon.svg" alt="Moon Icon" class="icon-moon" />
     </button>
+  </div>
   </header>
-  <main class="main-content">
-    <section class="hero">
-      <h1>Browser Extensions Manager</h1>
-      <p>Manage and discover your favorite browser extensions easily.</p>
-      <button class="cta-btn">Get Started</button>
-    </section>
-    <section class="extensions-list">
-      <h2>Popular Extensions</h2>
-      <div class="extensions-grid">
-        <div class="extension-card">
-          <img src="assets/images/logo-style-spy.svg" alt="Style Spy" class="extension-logo">
-          <h3>Style Spy</h3>
-          <p>Inspect and tweak CSS styles live on any website.</p>
-          <button class="install-btn">Install</button>
-        </div>
-        <div class="extension-card">
-          <img src="assets/images/logo-tab-master-pro.svg" alt="Tab Master Pro" class="extension-logo">
-          <h3>Tab Master Pro</h3>
-          <p>Organize and manage your browser tabs efficiently.</p>
-          <button class="install-btn">Install</button>
-        </div>
-        <div class="extension-card">
-          <img src="assets/images/logo-json-wizard.svg" alt="JSON Wizard" class="extension-logo">
-          <h3>JSON Wizard</h3>
-          <p>Format, validate, and beautify your JSON data.</p>
-          <button class="install-btn">Install</button>
-        </div>
-      </div>
-    </section>
+
+  <!-- Main content will go here -->
+  <main>
+    <!-- coming soon -->
   </main>
-  <footer class="footer">
-    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</p>
-  </footer>
-  <script src="js/main.js"></script>
+
+  <!-- Scripts -->
+  <script src="./js/main.js" defer></script>
 </body>
 </html>

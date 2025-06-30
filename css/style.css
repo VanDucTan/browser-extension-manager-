@@ -1,229 +1,134 @@
-/* Reset & base styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: 'Noto Sans', Arial, sans-serif;
-  background: #f8fafc;
-  color: #22223b;
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
+
+
+/* Theme-specific background for header */
+:root {
+  --transition: 0.3s ease;
 }
 
-.header {
+/* Light theme variables */
+body.light-theme {
+  --bg-page: #ebf4fb;
+  --bg-header: #ffffff;
+  --text-main: #111;
+  --border-color: #dce3ee;
+}
+
+/* Dark theme variables */
+body.dark-theme {
+  --bg-page: #050b21;
+  --bg-header: #1f2535;
+  --text-main: #f4f4f4;
+  --border-color: #2f354b;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  margin: 40px auto 0;
+  max-width: 1080px;
+  width: 90%;
+  
+  background-color: var(--bg-header);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+
+/* Logo */
+.logo-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem 4rem 1.5rem 4rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(34,34,59,0.04);
+  gap: 1rem;
 }
 .logo {
-  height: 40px;
+  height: 32px;
 }
-.nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-.nav-link {
-  text-decoration: none;
-  color: #22223b;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-link.active,
-.nav-link:hover {
-  background: #4f8cff;
-  color: #fff;
-}
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: background 0.2s;
-}
-.theme-toggle:hover {
-  background: #e0e7ef;
-}
-
-.main-content {
-  max-width: 1100px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 2rem;
-}
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  color: #4a4e69;
-  margin-bottom: 2rem;
-}
-.cta-btn {
-  background: #4f8cff;
-  color: #fff;
-  border: none;
-  padding: 0.9rem 2.2rem;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
-  transition: background 0.2s;
-}
-.cta-btn:hover {
-  background: #2563eb;
-}
-
-.extensions-list {
-  margin-bottom: 3rem;
-}
-.extensions-list h2 {
+.app-title {
   font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #22223b;
 }
-.extensions-grid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+
+/* Theme toggle (switch style) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
 }
-.extension-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(34,34,59,0.08);
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.18s, box-shadow 0.18s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-.extension-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(34,34,59,0.16);
-}
-.extension-logo {
-  height: 56px;
-  margin-bottom: 1.2rem;
-}
-.extension-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.extension-card p {
-  color: #4a4e69;
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
-}
-.install-btn {
-  background: #4f8cff;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  font-weight: 600;
+.slider {
+  position: absolute;
   cursor: pointer;
-  transition: background 0.2s;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
 }
-.install-btn:hover {
-  background: #2563eb;
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
 }
-
-.footer {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #4a4e69;
-  padding: 2rem 0 1rem 0;
-  background: #f8fafc;
+input:checked + .slider {
+  background-color: #4f46e5;
 }
-.footer a {
-  color: #4f8cff;
-  text-decoration: none;
+input:checked + .slider::before {
+  transform: translateX(26px);
 }
-
-/* Dark theme */
-body.dark {
-  background: #181a23;
-  color: #f8fafc;
-}
-body.dark .header,
-body.dark .extension-card {
-  background: #23263a;
-  color: #f8fafc;
-}
-body.dark .footer {
-  background: #181a23;
-  color: #bfc6d1;
-}
-body.dark .nav-link {
-  color: #f8fafc;
-}
-body.dark .nav-link.active,
-body.dark .nav-link:hover {
-  background: #4f8cff;
-  color: #fff;
-}
-body.dark .cta-btn,
-body.dark .install-btn {
-  background: #4f8cff;
-  color: #fff;
-}
-body.dark .cta-btn:hover,
-body.dark .install-btn:hover {
-  background: #2563eb;
-}
-body.dark .theme-toggle:hover {
-  background: #23263a;
+/* Container button */
+.theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f2535;
+  border: 2px solid #2f354b;
+  border-radius: 999px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-@media (max-width: 900px) {
-  .header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem 1rem 1rem 1rem;
-  }
-  .main-content {
-    padding: 0 1rem;
-  }
-  .extensions-grid {
-    gap: 1rem;
-  }
+.theme-button:hover {
+  border-color: #4f46e5; /* optional hover highlight */
 }
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
-  }
-  .main-content {
-    padding: 0 0.5rem;
-  }
-  .extensions-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .extension-card {
-    width: 100%;
-    max-width: 350px;
-  }
+
+/* Icons */
+.theme-button img {
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.3s ease;
+}
+
+/* Show/hide based on theme */
+body.light-theme .icon-sun {
+  display: none;
+}
+body.light-theme .icon-moon {
+  display: inline;
+}
+body.dark-theme .icon-moon {
+  display: none;
+}
+body.dark-theme .icon-sun {
+  display: inline;
 }

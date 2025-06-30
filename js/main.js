@@ -1,37 +1,16 @@
-// Theme toggle logic
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
+document.addEventListener('DOMContentLoaded', () => {
+  const themeSwitch = document.getElementById('themeSwitch');
 
-function setTheme(dark) {
-  if (dark) {
-    document.body.classList.add('dark');
-    themeIcon.src = 'assets/images/icon-moon.svg';
-    themeIcon.alt = 'Dark mode';
-  } else {
-    document.body.classList.remove('dark');
-    themeIcon.src = 'assets/images/icon-sun.svg';
-    themeIcon.alt = 'Light mode';
-  }
-}
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.body.className = `${savedTheme}-theme`;
 
-// Check for saved theme
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme === 'dark');
+  themeSwitch.addEventListener('click', () => {
+    const current = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
 
-// Toggle theme on button click
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    setTheme(isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-}
-
-// Simple install button logic (demo)
-document.querySelectorAll('.install-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.textContent = 'Installed!';
-    btn.disabled = true;
-    btn.style.background = '#22c55e';
+    document.body.classList.remove(`${current}-theme`);
+    document.body.classList.add(`${next}-theme`);
+    localStorage.setItem('theme', next);
   });
 });
