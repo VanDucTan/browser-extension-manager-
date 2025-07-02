@@ -11,6 +11,21 @@ body.light-theme {
   --bg-header: #ffffff;
   --text-main: #111;
   --border-color: #dce3ee;
+
+  /* Extension card */
+  --card-bg: #ffffff;
+  --card-border: #dce3ee; 
+
+  /* Remove button */
+  --remove-btn-bg: transparent;
+  --remove-btn-border: #dce3ee;
+  --remove-btn-hover-bg: #ff5c5c;
+  --remove-btn-hover-color: #fff;
+
+  /* Toggle */
+  --toggle-track-bg: #ccc;
+  --toggle-thumb-bg: #ffffff;
+  --toggle-active-bg: #ff5c5c;
 }
 
 /* Dark theme variables */
@@ -19,9 +34,23 @@ body.dark-theme {
   --bg-header: #1f2535;
   --text-main: #f4f4f4;
   --border-color: #2f354b;
+
+  --card-bg: #1f2535;
+  --card-border: #2f354b;
+
+  --remove-btn-bg: transparent;
+  --remove-btn-border: #2f354b;
+  --remove-btn-hover-bg: #ff5c5c;
+  --remove-btn-hover-color: #fff;
+
+  --toggle-track-bg: #666;
+  --toggle-thumb-bg: #ffffff;
+  --toggle-active-bg: #ff5c5c;
 }
 
+
 body {
+  font-family: 'Inter', sans-serif;
   background-color: var(--bg-page);
   color: var(--text-main);
   transition: background-color var(--transition), color var(--transition);
@@ -55,6 +84,8 @@ body {
 }
 .app-title {
   font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--logo-text-color); /* sẽ định nghĩa theo theme */
 }
 
 /* Theme toggle (switch style) */
@@ -159,6 +190,8 @@ body.dark-theme .icon-sun {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* đề phòng tràn */
+  gap: 1rem;
 }
 
 .extension-title {
@@ -191,7 +224,7 @@ body.dark-theme .icon-sun {
 /* Extensions container */
 .extension-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr  ;
   gap: 1.5rem;
 }
 
@@ -207,10 +240,12 @@ body.dark-theme .icon-sun {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 1rem;
+  padding: 1rem;  
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
   transition: background-color var(--transition), border-color var(--transition);
 }
 
@@ -251,7 +286,7 @@ body.dark-theme .icon-sun {
 .remove-btn {
   background-color: transparent;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 0.4rem 0.8rem;
   color: var(--text-main);
   cursor: pointer;
@@ -301,3 +336,33 @@ input:checked + .slider::before {
   transform: translateX(20px);
 }
 
+@media (min-width: 600px) {
+  .extension-list {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 cột */
+  }
+}
+
+@media (min-width: 900px) {
+  .extension-list {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 cột */
+  }
+}
+
+@media (max-width: 600px) {
+  .extension-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .extension-title {
+    width: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}

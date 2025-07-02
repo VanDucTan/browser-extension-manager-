@@ -14,32 +14,104 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== Dummy Extension Data =====
   const extensions = [
-    {
-      id: 1,
-      name: "DevLens",
-      description: "Quickly inspect page layouts and visualize element boundaries.",
-      icon: "./assets/images/logo-link-checker.svg",
-      bgColor: "#b3e5fc",
-      isActive: true
-    },
-    {
-      id: 2,
-      name: "StyleSpy",
-      description: "Instantly analyze and copy CSS from any webpage element.",
-      icon: "./assets/images/logo-style-spy.svg",
-      bgColor: "#ffe0b2",
-      isActive: false
-    },
-    {
-      id: 3,
-      name: "JSONWizard",
-      description: "Formats, validates, and prettifies JSON responses in-browser.",
-      icon: "./assets/images/logo-viewport-buddy.svg",
-      bgColor: "#f8bbd0",
-      isActive: true
-    }
-    // 👉 Add more if you like
-  ];
+  {
+    id: 1,
+    name: "DevLens",
+    description: "Quickly inspect page layouts and visualize element boundaries.",
+    icon: "./assets/images/logo-devlens.svg",
+    bgColor: "#b3e5fc",
+    isActive: true
+  },
+  {
+    id: 2,
+    name: "StyleSpy",
+    description: "Instantly analyze and copy CSS from any webpage element.",
+    icon: "./assets/images/logo-style-spy.svg",
+    bgColor: "#ffe0b2",
+    isActive: false
+  },
+  {
+    id: 3,
+    name: "SpeedBoost",
+    description: "Optimizes browser resource usage to accelerate page loading.",
+    icon: "./assets/images/logo-speed-boost.svg",
+    bgColor: "#fdd835",
+    isActive: true
+  },
+  {
+    id: 4,
+    name: "JSONWizard",
+    description: "Formats, validates, and prettifies JSON responses in-browser.",
+    icon: "./assets/images/logo-json-wizard.svg",
+    bgColor: "#f8bbd0",
+    isActive: true
+  },
+  {
+    id: 5,
+    name: "TabMaster Pro",
+    description: "Organizes browser tabs into groups and sessions.",
+    icon: "./assets/images/logo-tab-master-pro.svg",
+    bgColor: "#ce93d8",
+    isActive: true
+  },
+  {
+    id: 6,
+    name: "ViewportBuddy",
+    description: "Simulates various screen resolutions directly within the browser.",
+    icon: "./assets/images/logo-viewport-buddy.svg",
+    bgColor: "#80cbc4",
+    isActive: false
+  },
+  {
+    id: 7,
+    name: "Markup Notes",
+    description: "Enables annotation and notes directly onto webpages for collaborative debugging.",
+    icon: "./assets/images/logo-markup-notes.svg",
+    bgColor: "#ffe082",
+    isActive: true
+  },
+  {
+    id: 8,
+    name: "GridGuides",
+    description: "Overlay customizable grids and alignment guides on any webpage.",
+    icon: "./assets/images/logo-grid-guides.svg",
+    bgColor: "#a5d6a7",
+    isActive: true
+  },
+  {
+    id: 9,
+    name: "Palette Picker",
+    description: "Instantly extracts color palettes from any webpage.",
+    icon: "./assets/images/logo-palette-picker.svg",
+    bgColor: "#ffccbc",
+    isActive: false
+  },
+  {
+    id: 10,
+    name: "LinkChecker",
+    description: "Scans and highlights broken links on any page.",
+    icon: "./assets/images/logo-link-checker.svg",
+    bgColor: "#9fa8da",
+    isActive: false
+  },
+  {
+    id: 11,
+    name: "DOM Snapshot",
+    description: "Capture and export DOM structures quickly.",
+    icon: "./assets/images/logo-dom-snapshot.svg",
+    bgColor: "#bcaaa4",
+    isActive: true
+  },
+  {
+    id: 12,
+    name: "ConsolePlus",
+    description: "Enhanced developer console with advanced filtering and logging.",
+    icon: "./assets/images/logo-console-plus.svg",
+    bgColor: "#b0bec5",
+    isActive: false
+  }
+];
+
   const filterButtons = document.querySelectorAll(".filter-btn");
   filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
