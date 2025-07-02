@@ -189,9 +189,9 @@ body.dark-theme .icon-sun {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap; /* đề phòng tràn */
+  flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .extension-title {
